@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     
     /*ONCE BACKEND IS DEPLOYED REMEMBER TO CHANGE API GET URL*/
-    axios.get('http://localhost:5000/hello').then(res => {
+    axios.get('http://localhost:5000/recipes').then(res => {
       setGetMessage(res)
     }).catch(err => 
       console.log(err))
@@ -24,7 +24,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>React frontend and Flask backend</p>
         {/*BASICALLY MEANS IF SERVER RESPONSE == 200 THEN DISPLAY DATA, OTHERWISE DISPLAY LOADING */}
-        <div>{getMessage.status === 200 ? <h3>{getMessage.data.message}</h3> :<h3>LOADING</h3>}</div>
+        <div>{getMessage.status === 200 ? <h3>{getMessage.data.foo}</h3> :<h3>LOADING</h3>}</div>
       </header>
     </div>
   );
